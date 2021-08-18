@@ -1,0 +1,12 @@
+schema_version: 1
+
+name: server-runtime
+version: 1.0
+description: "copy server-runtime"
+
+artifacts:
+- name: "server-runtime"
+  sha512: "b7661f0952c6181f44d930088a91e86ba03dd0f697065efdc5cd944ece4f6497187817dc9f5c5d5020205d7ceb76d9d46dd3f8d0852a2bf8d6df187ae61b0990"
+  url: "http://indy.psi.redhat.com/api/content/maven/group/redhat-builds//io/syndesis/server/server-runtime/1.12.0.fuse-790010-redhat-00001/server-runtime-1.12.0.fuse-790010-redhat-00001.jar"
+  target: "runtime.jar"
+  dest: "/deployments"

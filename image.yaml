@@ -1,0 +1,41 @@
+schema_version: 1
+
+name: "fuse7/fuse-online-server-rhel8"
+description: "REST API server for Fuse Online"
+version: "1.9"
+from: "registry-proxy.engineering.redhat.com/rh-osbs/fuse7-fuse-java-openshift-rhel8:1.9"
+
+labels:
+- name: "com.redhat.component"
+  value: "fuse-ignite-server-rhel-8-container"
+- name: "maintainer"
+  value: "Otavio Piske <opiske@redhat.com>"   
+- name: "io.k8s.description"
+  value: "REST API server for Fuse Online"
+- name: "io.k8s.display-name"
+  value: "Red Hat Fuse Online - REST Server API"
+- name: "io.openshift.tags"
+  value: "fuse"
+
+envs:
+- name: JAVA_APP_DIR
+  value: /deployments
+- name: SYNDESIS_VERSION
+  value: 1.12.0.fuse-790010-redhat-00001
+
+ports:
+    - value: 8080
+    - value: 8778
+    - value: 9779
+      expose: true   
+
+modules:
+    repositories:
+      - name: modules
+        path: modules
+    install:
+      - name: license
+      - name: server-runtime
+
+run:
+  user: 185
